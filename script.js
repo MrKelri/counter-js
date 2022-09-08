@@ -113,7 +113,8 @@ const togglePopupWindow = function(){
 	else{
 		popup.classList.remove('hidden')
 		popupWindow = true;
-		inputSetCounter.focus();
+		// inputSetCounter.focus();
+		//need to handle mobile focus
 	}
 }
 const clickHandler = function (e) {
@@ -133,7 +134,7 @@ const clickHandler = function (e) {
 	} else if (targetID === 'accept'){
 		counter.setVal(+inputSetCounter.value);
 		togglePopupWindow();
-		document.focus();
+		// document.focus();
 	} else if (targetID === 'three-dots'){
 		togglePopupWindow();
 	}
