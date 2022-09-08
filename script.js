@@ -133,6 +133,7 @@ const clickHandler = function (e) {
 	} else if (targetID === 'accept'){
 		counter.setVal(+inputSetCounter.value);
 		togglePopupWindow();
+		document.focus();
 	} else if (targetID === 'three-dots'){
 		togglePopupWindow();
 	}
