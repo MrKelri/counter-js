@@ -139,6 +139,9 @@ body {
 .checkbox-box{
 
 }
+.btn-options{
+	display: none;
+}
 #checkbox-direction{
 	width: calc(var(--btn-size) / 2);
 	margin: 0 4vw;
@@ -168,6 +171,7 @@ body {
 		height: 17vh;
 	}
 	.btn-options{
+		display: block;
 		transform: translate(calc(var(--col-1) - 0%), calc(var(--row-4) + 85%));
 		/* background-color: aqua; */
 		width: 10vw;
