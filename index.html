@@ -22,6 +22,35 @@
 			<div id="btn-comp">
 				<button id="btn-completed" class="btn">Completed</button>
 			</div>
+			<div class="btn-options">
+				<div id="three-dots">...</div>
+			</div>
+			<div id="setCounter" class="popupWindow hidden">
+				<div class="input-value-box">
+					<label for="input-setCounter">Set value</label>
+					<input type="text" id="input-setCounter" class="input-value" min="0" max="999" 
+					placeholder="Value" 
+     				autocomplete="off"
+					maxlength="3"
+     				onkeypress="return event.charCode >= 48 && event.charCode <= 57"  
+	 				></input>
+				</div>
+				<div class="chooseDirection">
+					
+					<div class="checkbox-box">
+						<label for="checkbox-direction">decrease</label>
+						<input type="checkbox" checked id="checkbox-direction">
+					</div>
+				</div>
+				<div>
+					<div class="btn-back-box">
+						<button id="btn-back" class="btn btn-back">x</button>	
+					</div>
+					<div class="accept-box">
+						<div id="accept" class="accept btn">Accept</div>
+					</div>
+				</div>
+			</div>
 		</div>
 
 		<script src="script.js"></script>
