@@ -70,7 +70,7 @@ const counter = {
 		return [n100, n10, n1];
 	},
 	nInit() {
-		this.direction = startCheckbox;
+		this.direction = startCheckbox;//HERE BUG
 		const sum = this.threeNumbers;
 		n100 = sum[0];
 		n10 = sum[1];
