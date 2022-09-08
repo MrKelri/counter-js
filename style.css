@@ -1,0 +1,122 @@
+body {
+	touch-action: none;
+	padding: 0px;
+	margin: 0px;
+	overflow: hidden;
+	background-color: #E1E1E0;
+}
+:root {
+	--row-1: 0vh;
+	--row-2: 16.67vh;
+	--row-3: 33.33vh;
+	--row-4: 50vh;
+	--row-5: 66.67vh;
+	--row-6: 83.33vh;
+
+	--cmid: calc(41.67vw - 50%);
+	--col-1: 0vw;
+	--col-2: 8.33vw;
+	--col-3: 16.67vw;
+	--col-4: 25vw;
+	--col-5: 33.33vw;
+	--col-6: 41.67vw;
+	--col-7: 50vw;
+	--col-8: 58.33vw;
+	--col-9: 66.67vw;
+	--col-10: 75vw;
+	--col-11: 83.33vw;
+	--col-12: 91.67vw;
+}
+*{
+	font-family: "Oxanium", sans-serif;
+	color: #ECE9E3;
+	text-transform: Uppercase;
+	text-align: center;
+	font-size: 2.5vh;
+}
+
+#container {
+	position: relative;
+	height: calc(100vh - 7 * 2vh);
+	width: calc(100vw - 8 * 2vw);
+	margin: 7vh 8vw;
+}
+#counter {
+	width: 80vw;
+	height: 16vh;
+	position: absolute;
+	translate: var(--cmid) var(--row-3);
+	display: flex;
+	justify-content: space-evenly;
+}
+.num_tiles {
+	text-align: right;
+	align-items: start;
+	display: block;
+	border-radius: 2.25vh;
+	margin: 0% 2.5%;
+	line-height:95%;
+	width: 29vw;
+	font-size: 17vh;
+	background-color: #0F1922;
+}
+
+.btn {
+	height: 4.8vh;
+	display: flex;
+	background-color: #EA4958;
+	font-weight: bold;
+	align-items: center;
+	justify-content: center;
+}
+#options-box {
+	display: grid;
+	width: calc(var(--col-8) - 13%);
+	height: var(--row-2);
+	position: absolute;
+	translate: var(--cmid) var(--row-1);
+}
+#btn-backward {
+	background-color: #0F1922;
+}
+#btn-comp {
+	display: grid;
+	width: calc(var(--col-8) - 13%);
+
+	position: absolute;
+	translate: var(--cmid) calc(var(--row-6) - 100%);
+	/* background-color: darkcyan; */
+}
+#btn-completed {
+	height: 9.6vh;
+}
+
+@media (orientation: landscape) {
+	*{
+		font-size: 4.4vh;
+	}  
+	#counter {
+		width: 80vw;
+		height: 48vh;
+		translate: var(--cmid) calc(var(--col-2) - 0%);
+	}
+	.num_tiles{
+		font-size: 48vh;
+		border-radius: 6.67vh;
+	}
+	#options-box{
+		display: none;
+
+	}
+	#btn-comp{
+		width: calc(var(--col-8) - 13%);
+		translate: var(--cmid) calc(var(--row-5));
+	}
+	#btn-completed {
+		height: 17vh;
+	}
+  } 
+
+  .hidden{
+	display: none;
+}

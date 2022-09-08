@@ -1,0 +1,123 @@
+
+body{
+  touch-action: none;
+  padding: 0px;
+  margin: 0px;
+  overflow: hidden;
+}
+:root{
+  /* --sixth: 16.67vh */
+  /* --row-1: calc(0vh       - 0%);
+  --row-2: calc(16.67vh   - 0%);
+  --row-3: calc(33.33vh   - 0%);
+  --row-4: calc(50vh      - 0%);
+  --row-5: calc(66.67vh   - 0%);
+  --row-6: calc(83.33vh   - 0%); */
+  /* --row-7: calc(100vh     - 100%); */
+  /* --twelfth: 8.33vw
+  --col-1: calc(0vw       - 50%);
+  --col-2: calc(8.33vw    - 50%);
+  --col-3: calc(16.67vw   - 50%);
+  --col-4: calc(25vw      - 50%);
+  --col-5: calc(33.33vw   - 50%);
+  --col-6: calc(41.67vw   - 50%);
+  --col-7: calc(50vw      - 50%);
+  --col-8: calc(58.33vw   - 50%);
+  --col-9: calc(66.67vw   - 50%);
+  --col-10: calc(75vw      - 50%);
+  --col-11: calc(83.33vw  - 50%);
+  --col-12: calc(91.67vw  - 50%);
+  --col-13: calc(100vw    - 50%);
+} */
+
+  --row-1: 0vh    ;
+  --row-2: 16.67vh;
+  --row-3: 33.33vh;
+  --row-4: 50vh   ;
+  --row-5: 66.67vh;
+  --row-6: 83.33vh;
+
+  /* --twelfth: 8.33vw */
+  --cmid: calc(41.67vw - 50%); 
+  --col-1:  0vw    ;
+  --col-2:  8.33vw ;
+  --col-3:  16.67vw;
+  --col-4:  25vw   ;
+  --col-5:  33.33vw;
+  --col-6:  41.67vw;
+  --col-7:  50vw   ;
+  --col-8:  58.33vw;
+  --col-9:  66.67vw;
+  --col-10: 75vw   ;
+  --col-11: 83.33vw;
+  --col-12: 91.67vw;
+  --col-13: 100vw  ;
+}
+/* .options-on-screan{
+  height: ;
+} */
+/* 
+@media only screen and (min-width: 500px) {
+  .btn_box {width: 100%;display: flex; }
+} */
+
+#container{
+  position: relative;
+  display: grid;
+  height: 86vh;
+  width: 84vw;
+  margin: 7vh 8vw;
+  padding: 0px 0px;
+  background-color: red;
+}
+#counter {
+  position: absolute;
+  translate: var(--cmid) var(--row-3);
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  background-color: lavender;
+  border-radius: 12px;
+}
+#btn_box{
+  position: absolute;
+  translate: var(--cmid) var(--row-1);
+  background-color: aqua;
+}
+.num_tiles {
+ background-color: #363636;
+ color: gold;
+ text-align: justify;
+ font-size: 14vh;
+ /* padding: 5vw; */
+ border-radius: 4vw;
+ font-family: verdana;
+}
+.btn {
+  background-color: lightgreen;
+  /* width: 80%;
+  margin: 6vw 10% 0 10%; */
+  /* height: 100%; */
+  border: #555555;
+  border-style: solid;
+  border-radius: 4vw;
+  font-size: 4vw;
+  font-family: verdana;
+  font-weight: bold;
+  color:#555555
+}
+.btn:hover{
+  background-color: lightgoldenrodyellow;
+}
+.btn:active{
+  background-color: dodgerblue;
+}
+.btn_increase{
+  background-color: gainsboro;
+}
+.btn_decrease{
+  background-color: lightgreen;
+}
+.btn_save{
+  background-color: gold;
+}
