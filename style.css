@@ -98,7 +98,7 @@ body {
 	#counter {
 		width: 80vw;
 		height: 48vh;
-		translate: var(--cmid) calc(var(--col-2) - 0%);
+		translate: var(--cmid) calc(var(--col-1) + 5%);
 	}
 	.num_tiles{
 		font-size: 48vh;
@@ -110,7 +110,7 @@ body {
 	}
 	#btn-comp{
 		width: calc(var(--col-8) - 13%);
-		translate: var(--cmid) calc(var(--row-5));
+		translate: var(--cmid) calc(var(--row-4) + 50%);
 	}
 	#btn-completed {
 		height: 17vh;
