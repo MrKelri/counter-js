@@ -3,7 +3,8 @@ body {
 	padding: 0px;
 	margin: 0px;
 	overflow: hidden;
-	background-color: #E1E1E0;
+	/* background-color: #E1E1E0; */
+	background-color: aqua;
 }
 :root {
 	--row-1: 0vh;
