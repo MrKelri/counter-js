@@ -18,9 +18,9 @@ const checkLocal = function () {
 		myVal = +localStorage.getItem('myVal');
 	}
 	
-	checkboxDecrease.checked = !checkboxState;
+	checkboxDecrease.checked = checkboxState;
 	console.log('Saved data: count: ' + myVal);
-	console.log('Saved data: checkbox was checked? ' + !checkboxState);
+	console.log('Saved data: checkbox was checked? ' + checkboxState);
 	return [checkboxState,myVal];
 };
 
@@ -30,8 +30,8 @@ const startVal = locals[1]; //local
 const counter = {
 	val: startVal,
 	direction: false,
-	counterManager(increase = false){
-		if(increase) this.direction?this.increase:this.decrease
+	counterManager(decrease = false){
+		if(!decrease) this.direction?this.increase:this.decrease
 		else !this.direction?this.increase:this.decrease
 		return this
 	},
@@ -70,7 +70,7 @@ const counter = {
 		return [n100, n10, n1];
 	},
 	nInit() {
-		this.direction = startCheckbox;//HERE BUG
+		// this.direction = startCheckbox;//HERE BUG
 		const sum = this.threeNumbers;
 		n100 = sum[0];
 		n10 = sum[1];
@@ -94,10 +94,11 @@ const counter = {
 	},
 };
 counter.nInit();
+counter.direction = startCheckbox;
 counter.show;
 let popupWindow = false;
 checkboxDecrease.addEventListener('change',()=>{
-	checkboxDecrease.checked?counter.direction = false:counter.direction=true;
+	checkboxDecrease.checked?counter.direction = true:counter.direction=false;
 }
 
 );
@@ -113,41 +114,41 @@ const togglePopupWindow = function(){
 	else{
 		popup.classList.remove('hidden')
 		popupWindow = true;
-		// inputSetCounter.focus();
+		inputSetCounter.focus();
 		//need to handle mobile focus
 	}
 }
 const clickHandler = function (e) {
 	const targetID = e.target.id;
 	if(popupWindow){
-		if(!e.target.closest('.popupWindow')) togglePopupWindow(); 
+		if (targetID === 'accept'){
+			counter.setVal(+inputSetCounter.value);
+			togglePopupWindow();
+			// document.focus();
+		}
+		else if(targetID === 'btn-back'||targetID === 'btn-setCounter' || targetID === 'three-dots'||!e.target.closest('.popupWindow')) {
+			togglePopupWindow();
+		}
+		
 	}
-	if (!targetID === 'btn') return;
-	else if (targetID === 'btn-completed') {
-		counter.counterManager(true).show;
-	} else if (targetID === 'btn-backward') {
-		counter.counterManager(false).show;
-	} else if (targetID === 'btn-setCounter'){
-		togglePopupWindow();
-	} else if (targetID === 'btn-back'){
-		togglePopupWindow();
-	} else if (targetID === 'accept'){
-		counter.setVal(+inputSetCounter.value);
-		togglePopupWindow();
-		// document.focus();
-	} else if (targetID === 'three-dots'){
-		togglePopupWindow();
+	else{
+		if (!targetID === 'btn') return;
+		else if (targetID === 'btn-completed'||targetID === 'container'|| e.target.closest('#counter')||e.target.localName === 'html' || e.target.localName === 'body') {
+			counter.counterManager(true).show;
+		} else if (targetID === 'btn-backward') {
+			counter.counterManager(false).show;
+		} else if (targetID === 'btn-setCounter'){
+			togglePopupWindow();
+		}  else if (targetID === 'three-dots'){
+			togglePopupWindow();
+		}
 	}
-
-	// else if (targetID.contains('btn_save')) {
-	// 	counter.save;
-	// }
 };
 window.addEventListener('pagehide', function (e) {
 	e.preventDefault();
 	counter.save;
 });
-container.addEventListener('click', function (e) {
+document.addEventListener('click', function (e) {
 	clickHandler(e);
 });
 document.addEventListener('keypress', function (e) {
