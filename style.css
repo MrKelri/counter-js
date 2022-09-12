@@ -29,7 +29,7 @@ body {
   --col-11: 83.33vw;
   --col-12: 91.67vw;
   --btn-size: var(--col-8);
-  
+
 }
 *{
 	font-family: "Oxanium", sans-serif;
@@ -99,14 +99,13 @@ body {
   padding: 6vh 10vw;
   transform: translate(calc(var(--cmid) - 0%), calc(var(--row-2) - 0%));
   background-color: #0f1922;
-
   display: flex;
   flex-wrap: wrap;
   align-content: stretch;
 }
-.input-value-box {
-  /* align-content: right; */
-}
+/* .input-value-box {
+  align-content: right;
+} */
 .input-value {
   margin: 0 4vw;
   width: calc(var(--btn-size) / 2);
@@ -127,8 +126,8 @@ body {
   height: 4vh;
   color: #0f1922;
 }
-.accept {
-}
+/* .accept {
+} */
 .accept-box {
   /* position: absolute; */
   width: var(--btn-size);
@@ -138,8 +137,8 @@ body {
 .chooseDirection {
   margin-top: 2vh;
 }
-.checkbox-box {
-}
+/* .checkbox-box {
+} */
 .btn-options {
   display: none;
 }
