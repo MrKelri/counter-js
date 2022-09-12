@@ -29,6 +29,7 @@ body {
   --col-11: 83.33vw;
   --col-12: 91.67vw;
   --btn-size: var(--col-8);
+  
 }
 *{
 	font-family: "Oxanium", sans-serif;
