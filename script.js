@@ -144,12 +144,13 @@ const clickHandler = function (e) {
 		}
 	}
 };
-window.addEventListener('pagehide', function (e) {
-	e.preventDefault();
-	counter.save;
-});
+// window.addEventListener('pagehide', function (e) {
+// 	e.preventDefault();
+// 	counter.save;
+// });
 document.addEventListener('click', function (e) {
 	clickHandler(e);
+	counter.save;
 });
 document.addEventListener('keypress', function (e) {
 	// console.log(e.key);
@@ -167,6 +168,7 @@ document.addEventListener('keypress', function (e) {
 	} else if (e.key === 'b') {
 		if(!popupWindow)counter.counterManager(false).show;
 	}
+	counter.save;
 });
 window.addEventListener(
 	'touchmove',
